@@ -603,7 +603,7 @@ async def play(_, message: Message):
     elif urls:
         query = toxt
         await lel.edit("🔎 **searching...**")
-        ydl_opts = {"format": "bestaudio[ext=m4a]"}
+        ydl_opts = {"format": "bestaudio/best"}
         try:
             results = YoutubeSearch(query, max_results=1).to_dict()
             url = f"https://youtube.com{results[0]['url_suffix']}"
@@ -647,7 +647,7 @@ async def play(_, message: Message):
         for i in message.command[1:]:
             query += " " + str(i)
         print(query)
-        ydl_opts = {"format": "bestaudio[ext=m4a]"}
+        ydl_opts = {"format": "bestaudio/best"}
 
         try:
             results = YoutubeSearch(query, max_results=5).to_dict()
@@ -655,7 +655,6 @@ async def play(_, message: Message):
             await lel.edit(
                 "😕 **song name not detected**\n\n» **please provide the name of the song you want to play**"
             )
-        # veez project
         try:
             toxxt = "\n"
             j = 0
@@ -973,7 +972,7 @@ async def ytplay(_, message: Message):
         query += " " + str(i)
     print(query)
     await lel.edit("🔄 **connecting to vc...**")
-    ydl_opts = {"format": "bestaudio[ext=m4a]"}
+    ydl_opts = {"format": "bestaudio/best"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
         url = f"https://youtube.com{results[0]['url_suffix']}"
