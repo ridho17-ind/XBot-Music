@@ -85,7 +85,7 @@ async def cbbasic(_, query: CallbackQuery):
     await query.edit_message_text(
         f"""🏮 **here is the basic commands**
 
-🎧 [ GROUP VC CMD ]
+🎧 [ VOICE CHAT PLAY CMD ]
 
 /play (song name) - play song from youtube
 /ytp (song name) - play song directly from youtube 
@@ -93,19 +93,8 @@ async def cbbasic(_, query: CallbackQuery):
 /playlist - show the list song in queue
 /song (song name) - download song from youtube
 /search (video name) - search video from youtube detailed
-/vsong (video name) - download video from youtube detailed
+/video (video name) - download video from youtube detailed
 /lyric - (song name) lyrics scrapper
-
-🎧 [ CHANNEL VC CMD ]
-
-/cplay - stream music on channel voice chat
-/cplayer - show the song in streaming
-/cpause - pause the streaming music
-/cresume - resume the streaming was paused
-/cskip - skip streaming to the next song
-/cend - end the streaming music
-/refresh - refresh the admin cache
-/ubjoinc - invite the assistant for join to your channel
 
 ⚡ __Powered by {BOT_NAME} A.I__""",
         reply_markup=InlineKeyboardMarkup(
@@ -313,7 +302,7 @@ async def cblocal(_, query: CallbackQuery):
     await query.edit_message_text(
         f"""🏮 **here is the basic commands**
 
-🎧 [ GROUP VC CMD ]
+🎧 [ VOICE CHAT PLAY CMD ]
 
 /play (song name) - play song from youtube
 /ytp (song name) - play song directly from youtube 
@@ -321,19 +310,8 @@ async def cblocal(_, query: CallbackQuery):
 /playlist - show the list song in queue
 /song (song name) - download song from youtube
 /search (video name) - search video from youtube detailed
-/vsong (video name) - download video from youtube detailed
+/video (video name) - download video from youtube detailed
 /lyric - (song name) lyrics scrapper
-
-🎧 [ CHANNEL VC CMD ]
-
-/cplay - stream music on channel voice chat
-/cplayer - show the song in streaming
-/cpause - pause the streaming music
-/cresume - resume the streaming was paused
-/cskip - skip streaming to the next song
-/cend - end the streaming music
-/refresh - refresh the admin cache
-/ubjoinc - invite the assistant for join to your channel
 
 ⚡ __Powered by {BOT_NAME} A.I__""",
         reply_markup=InlineKeyboardMarkup(
