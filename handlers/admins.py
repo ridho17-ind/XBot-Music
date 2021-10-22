@@ -4,6 +4,7 @@ from asyncio import QueueEmpty
 
 from callsmusic import callsmusic
 from callsmusic.queues import queues
+from callsmusic.callsmusic import pytgcalls as call_py
 from config import BOT_USERNAME, que
 from cache.admins import admins
 from handlers.play import cb_admin_check
@@ -293,3 +294,15 @@ async def cbskip(_, query: CallbackQuery):
     await query.edit_message_text(
         "⏭ **You've skipped to the next song**", reply_markup=BACK_BUTTON
     )
+
+
+@Client.on_message(command(["volume", f"volume@{BOT_USERNAME}"]) & other_filters)
+@authorized_users_only
+async def change_volume(client, message):
+    range = message.command[1]
+    chat_id = message.chat.id
+    try:
+        await call_py.change_volume_call(chat_id, volume=int(range))
+        await message.reply(f"✅ **volume set to:** ```{range}%```")
+     except Exception as e:
+        await message.reply(f"**error:** {e}")
