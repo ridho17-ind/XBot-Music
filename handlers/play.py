@@ -747,7 +747,7 @@ async def play(_, message: Message):
         appendable = [s_name, r_by, loc]
         qeue.append(appendable)
         await lel.delete()
-        await message.send_photo(
+        await _.send_photo(
             photo="final.png",
             caption=f"💡 **Track added to queue »** `{position}`\n\n🏷 **Name:** [{title[:35]}...]({url})\n⏱ **Duration:** `{duration}`\n🎧 **Request by:** {message.from_user.mention}",
             reply_markup=keyboard,
@@ -769,7 +769,7 @@ async def play(_, message: Message):
             )
             return
         await lel.delete()
-        await message.send_photo(
+        await _.send_photo(
             photo="final.png",
             caption=f"🏷 **Name:** [{title[:70]}]({url})\n⏱ **Duration:** `{duration}`\n💡 **Status:** `Playing`\n"
             + f"🎧 **Request by:** {message.from_user.mention}",
@@ -1030,7 +1030,7 @@ async def ytplay(_, message: Message):
         appendable = [s_name, r_by, loc]
         qeue.append(appendable)
         await lel.delete()
-        await message.send_photo(
+        await _.send_photo(
             photo="final.png",
             caption=f"💡 **Track added to queue »** `{position}`\n\n🏷 **Name:** [{title[:35]}...]({url})\n⏱ **Duration:** `{duration}`\n🎧 **Request by:** {message.from_user.mention}",
             reply_markup=keyboard,
@@ -1052,7 +1052,7 @@ async def ytplay(_, message: Message):
             )
             return
         await lel.delete()
-        await message.send_photo(
+        await _.send_photo(
             photo="final.png",
             caption=f"🏷 **Name:** [{title[:70]}]({url})\n⏱ **Duration:** `{duration}`\n💡 **Status:** `Playing`\n"
             + f"🎧 **Request by:** {message.from_user.mention}",
