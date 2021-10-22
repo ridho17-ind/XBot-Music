@@ -64,7 +64,6 @@ def transcode(filename):
     ).overwrite_output().run()
     os.remove(filename)
 
-
 def convert_seconds(seconds):
     seconds = seconds % (24 * 3600)
     seconds %= 3600
@@ -72,11 +71,9 @@ def convert_seconds(seconds):
     seconds %= 60
     return "%02d:%02d" % (minutes, seconds)
 
-
 def time_to_seconds(time):
     stringt = str(time)
     return sum(int(x) * 60 ** i for i, x in enumerate(reversed(stringt.split(":"))))
-
 
 def changeImageSize(maxWidth, maxHeight, image):
     widthRatio = maxWidth / image.size[0]
@@ -85,7 +82,6 @@ def changeImageSize(maxWidth, maxHeight, image):
     newHeight = int(heightRatio * image.size[1])
     newImage = image.resize((newWidth, newHeight))
     return newImage
-
 
 async def generate_cover(title, thumbnail, ctitle):
     async with aiohttp.ClientSession() as session, session.get(thumbnail) as resp:
@@ -603,7 +599,7 @@ async def play(_, message: Message):
     elif urls:
         query = toxt
         await lel.edit("🔎 **searching...**")
-        ydl_opts = {"format": "bestaudio/best"}
+        ydl_opts = {"format": "bestaudio[ext=m4a]"}
         try:
             results = YoutubeSearch(query, max_results=1).to_dict()
             url = f"https://youtube.com{results[0]['url_suffix']}"
@@ -712,7 +708,6 @@ async def play(_, message: Message):
                 open(thumb_name, "wb").write(thumb.content)
                 duration = results[0]["duration"]
                 results[0]["url_suffix"]
-                results[0]["views"]
             except Exception as e:
                 await lel.delete()
                 await message.reply_photo(
@@ -969,7 +964,7 @@ async def ytplay(_, message: Message):
         query += " " + str(i)
     print(query)
     await lel.edit("🔄 **connecting to vc...**")
-    ydl_opts = {"format": "bestaudio/best"}
+    ydl_opts = {"format": "bestaudio[ext=m4a]"}
     try:
         results = YoutubeSearch(query, max_results=1).to_dict()
         url = f"https://youtube.com{results[0]['url_suffix']}"
