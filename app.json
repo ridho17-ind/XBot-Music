@@ -30,7 +30,7 @@
             "value": ""
         },
         "LOG_CHANNEL": {
-            "description": "create a private channel and get the channel id, add your bot as admin to the channel too",
+            "description": "create a private channel and get the channel id (give the channel username/link to bot @username_to_id_bot and get the channel id), add your bot as admin to the channel too",
             "required": true,
             "value": ""
         },
@@ -47,10 +47,10 @@
         "BG_IMAGE": {
             "description": "fill with your costum background image link",
             "required": false,
-            "value": "https://telegra.ph/file/20147c4f049e2c1f2f248.png"
+            "value": "https://telegra.ph/file/8628c642a266a22effd8c.png"
         },
         "OWNER_NAME": {
-            "description": "fill with your username without @",
+            "description": "fill with your telegram username without @",
             "required": false,
             "value": "dlwrml"
         },
@@ -72,17 +72,17 @@
             "required": true
         },
         "DURATION_LIMIT": {
-            "description": "max duration for music to download (in minutes).",
+            "description": "max duration for music to download (in minutes, default is 40).",
             "required": true,
             "value": "40"
         },
         "UPDATES_CHANNEL": {
-            "description": "if you have channel fill the channel username here without @",
+            "description": "if you have channel, fill the channel username here without @",
             "required": false,
             "value": "levinachannel"
         },
         "GROUP_SUPPORT": {
-            "description": "if you have group fill the group username here without @",
+            "description": "if you have group, fill the group username here without @",
             "required": false,
             "value": "VeezSupportGroup"
         }
