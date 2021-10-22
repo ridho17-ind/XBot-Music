@@ -4,7 +4,6 @@ from asyncio import QueueEmpty
 
 from callsmusic import callsmusic
 from callsmusic.queues import queues
-from callsmusic.callsmusic import pytgcalls as call_py
 from config import BOT_USERNAME, que
 from cache.admins import admins
 from handlers.play import cb_admin_check
@@ -302,7 +301,7 @@ async def change_volume(client, message):
     range = message.command[1]
     chat_id = message.chat.id
     try:
-       call_py.change_volume_call(chat_id, volume=int(range))
+       callsmusic.pytgcalls.change_volume_call(chat_id, volume=int(range))
        await message.reply(f"✅ **volume set to:** ```{range}%```")
     except Exception as e:
        await message.reply(f"**error:** {e}")
