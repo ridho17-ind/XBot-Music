@@ -689,8 +689,8 @@ async def play(_, message: Message):
                     [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
                 ]
             )
-            await message.send_photo(
-                photo=f"{THUMB_IMG}", caption=toxxt, reply_markup=keyboard
+            await _.send_photo(
+                chid, photo=f"{THUMB_IMG}", caption=toxxt, reply_markup=keyboard
             )
 
             await lel.delete()
@@ -748,6 +748,7 @@ async def play(_, message: Message):
         qeue.append(appendable)
         await lel.delete()
         await _.send_photo(
+            chid,
             photo="final.png",
             caption=f"💡 **Track added to queue »** `{position}`\n\n🏷 **Name:** [{title[:35]}...]({url})\n⏱ **Duration:** `{duration}`\n🎧 **Request by:** {message.from_user.mention}",
             reply_markup=keyboard,
@@ -770,6 +771,7 @@ async def play(_, message: Message):
             return
         await lel.delete()
         await _.send_photo(
+            chid,
             photo="final.png",
             caption=f"🏷 **Name:** [{title[:70]}]({url})\n⏱ **Duration:** `{duration}`\n💡 **Status:** `Playing`\n"
             + f"🎧 **Request by:** {message.from_user.mention}",
@@ -1031,6 +1033,7 @@ async def ytplay(_, message: Message):
         qeue.append(appendable)
         await lel.delete()
         await _.send_photo(
+            chid,
             photo="final.png",
             caption=f"💡 **Track added to queue »** `{position}`\n\n🏷 **Name:** [{title[:35]}...]({url})\n⏱ **Duration:** `{duration}`\n🎧 **Request by:** {message.from_user.mention}",
             reply_markup=keyboard,
@@ -1053,6 +1056,7 @@ async def ytplay(_, message: Message):
             return
         await lel.delete()
         await _.send_photo(
+            chid,
             photo="final.png",
             caption=f"🏷 **Name:** [{title[:70]}]({url})\n⏱ **Duration:** `{duration}`\n💡 **Status:** `Playing`\n"
             + f"🎧 **Request by:** {message.from_user.mention}",
