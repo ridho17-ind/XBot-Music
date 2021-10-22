@@ -99,7 +99,7 @@ async def generate_cover(title, thumbnail, ctitle):
     img = Image.open("temp.png")
     draw = ImageDraw.Draw(img)
     font = ImageFont.truetype("etc/typold.otf", 55)
-    font2 = ImageFont.truetype("etc/finalfont.ttf", 80)
+    font2 = ImageFont.truetype("etc/finalfont.ttf", 75)
     draw.text((25, 520), f"Playing on {ctitle[:8]}", (0, 0, 0), font=font)
     draw.text((25, 605), f"{title[:15]}...", (0, 0, 0), font=font2)
     img.save("final.png")
@@ -148,8 +148,8 @@ async def playlist(client, message):
             msg += f"\n• Req by {usr}"
     await message.reply_text(msg, reply_markup=keyboard)
 
-
 # ============================= Settings =========================================
+
 def updated_stats(chat, queue, vol=100):
     if chat.id in callsmusic.pytgcalls.active_calls:
         stats = "⚙ settings for **{}**".format(chat.title)
@@ -333,7 +333,7 @@ async def m_cb(b, cb):
             callsmusic.pytgcalls.active_calls[chet_id] == "paused"
         ):
             await cb.answer(
-                "assistant is not connected to voice chat !", show_alert=True
+                "userbot is not connected to voice chat.", show_alert=True
             )
         else:
             callsmusic.pytgcalls.pause_stream(chet_id)
@@ -348,7 +348,7 @@ async def m_cb(b, cb):
             callsmusic.pytgcalls.active_calls[chet_id] == "playing"
         ):
             await cb.answer(
-                "assistant is not connected to voice chat !", show_alert=True
+                "userbot is not connected to voice chat.", show_alert=True
             )
         else:
             callsmusic.pytgcalls.resume_stream(chet_id)
@@ -470,7 +470,7 @@ async def m_cb(b, cb):
                 )
         else:
             await cb.answer(
-                "assistant is not connected to voice chat !", show_alert=True
+                "userbot is not connected to voice chat.", show_alert=True
             )
 
 
@@ -612,7 +612,6 @@ async def play(_, message: Message):
             open(thumb_name, "wb").write(thumb.content)
             duration = results[0]["duration"]
             results[0]["url_suffix"]
-            results[0]["views"]
         except Exception as e:
             await lel.delete()
             await message.reply_photo(
