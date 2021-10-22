@@ -81,8 +81,9 @@ async def bye(client, message):
                 f"Userbot leaving...\n\nLeft: {left} chats.\nFailed: {failed} chats."
             )
         await asyncio.sleep(0.7)
+        await lol.delete()
     await client.send_message(
-        message.chat.id, f"Left from {left} chats.\nFailed in {failed} chats."
+        message.chat.id, f"✅ Left from: {left} chats.\n❌ Failed in: {failed} chats."
     )
 
 
