@@ -776,7 +776,6 @@ async def play(_, message: Message):
             reply_markup=keyboard,
         )
         os.remove("final.png")
-        os.remove("*.jpg")
 
 
 @Client.on_callback_query(filters.regex(pattern=r"plll"))
@@ -896,7 +895,6 @@ async def lol_cb(b, cb):
         )
     if path.exists("final.png"):
         os.remove("final.png")
-        os.remove("*.jpg")
 
 
 @Client.on_message(command(["ytp", f"ytp@{BOT_USERNAME}"]) & other_filters)
@@ -1061,4 +1059,3 @@ async def ytplay(_, message: Message):
             reply_markup=keyboard,
         )
         os.remove("final.png")
-        os.remove("*.jpg")
