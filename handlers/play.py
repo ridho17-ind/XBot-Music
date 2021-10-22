@@ -823,7 +823,6 @@ async def lol_cb(b, cb):
     title = results[x]["title"][:70]
     thumbnail = results[x]["thumbnails"][0]
     duration = results[x]["duration"]
-    results[x]["views"]
     url = f"https://www.youtube.com{resultss}"
     try:
         secmul, dur, dur_arr = 1, 0, duration.split(":")
@@ -966,9 +965,6 @@ async def ytplay(_, message: Message):
         )
         return
 
-    message.from_user.id
-    message.from_user.first_name
-
     query = ""
     for i in message.command[1:]:
         query += " " + str(i)
@@ -1019,7 +1015,6 @@ async def ytplay(_, message: Message):
             [InlineKeyboardButton("• Cʜᴀɴɴᴇʟ", url=f"https://t.me/{UPDATES_CHANNEL}")],
         ]
     )
-    message.from_user.first_name
     await generate_cover(title, thumbnail, ctitle)
     file_path = await converter.convert(youtube.download(url))
     chat_id = get_chat_id(message.chat)
