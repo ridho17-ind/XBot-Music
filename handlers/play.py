@@ -98,9 +98,9 @@ async def generate_cover(title, thumbnail, ctitle):
     Image.alpha_composite(image5, image6).save("temp.png")
     img = Image.open("temp.png")
     draw = ImageDraw.Draw(img)
-    font = ImageFont.truetype("etc/regular.ttf", 50)
+    font = ImageFont.truetype("etc/regular.ttf", 52)
     font2 = ImageFont.truetype("etc/medium.ttf", 75)
-    draw.text((27, 538), f"Playing on {ctitle[:6]}..", (0, 0, 0), font=font)
+    draw.text((27, 537), f"Playing on {ctitle[:8]}..", (0, 0, 0), font=font)
     draw.text((27, 612), f"{title[:18]}...", (0, 0, 0), font=font2)
     img.save("final.png")
     os.remove("temp.png")
@@ -685,6 +685,7 @@ async def play(_, message: Message):
                 ]
             )
             await _.send_photo(
+                chid,
                 photo=f"{THUMB_IMG}",
                 caption=toxxt,
                 reply_markup=keyboard,
@@ -694,7 +695,7 @@ async def play(_, message: Message):
             return
         
         except:
-            await lel.edit("__no more results to choose, starting to playing...__")
+            pass
 
             try:
                 url = f"https://youtube.com{results[0]['url_suffix']}"
