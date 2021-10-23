@@ -99,8 +99,8 @@ async def generate_cover(title, thumbnail, ctitle):
     img = Image.open("temp.png")
     draw = ImageDraw.Draw(img)
     font = ImageFont.truetype("etc/regular.ttf", 52)
-    font2 = ImageFont.truetype("etc/medium.ttf", 75)
-    draw.text((27, 537), f"Playing on {ctitle[:8]}..", (0, 0, 0), font=font)
+    font2 = ImageFont.truetype("etc/medium.ttf", 76)
+    draw.text((27, 538), f"Playing on {ctitle[:8]}..", (0, 0, 0), font=font)
     draw.text((27, 612), f"{title[:18]}...", (0, 0, 0), font=font2)
     img.save("final.png")
     os.remove("temp.png")
@@ -684,8 +684,7 @@ async def play(_, message: Message):
                     [InlineKeyboardButton(text="🗑 Close", callback_data="cls")],
                 ]
             )
-            await _.send_photo(
-                chid,
+            await message.reply_photo(
                 photo=f"{THUMB_IMG}",
                 caption=toxxt,
                 reply_markup=keyboard,
