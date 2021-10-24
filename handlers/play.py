@@ -2,6 +2,7 @@ import os
 from os import path
 from typing import Callable
 from asyncio.queues import QueueEmpty
+from pytgcalls.exceptions import NoActiveGroupCall
 
 import aiofiles
 import aiohttp
@@ -758,7 +759,7 @@ async def play(_, message: Message):
         qeue.append(appendable)
         try:
             callsmusic.pytgcalls.join_group_call(chat_id, file_path)
-        except:
+        except NoActiveGroupCall:
             await lel.edit(
                 "😕 **voice chat not found**\n\n» please turn on the voice chat first"
             )
@@ -1035,7 +1036,7 @@ async def ytplay(_, message: Message):
         qeue.append(appendable)
         try:
             callsmusic.pytgcalls.join_group_call(chat_id, file_path)
-        except:
+        except NoActiveGroupCall:
             await lel.edit(
                 "😕 **voice chat not found**\n\n» please turn on the voice chat first"
             )
