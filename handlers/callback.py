@@ -27,26 +27,25 @@ async def cbstart(_, query: CallbackQuery):
             [
                 [
                     InlineKeyboardButton(
-                        "➕ Add me to your Group ➕",
+                        "Add me to your Group",
                         url=f"https://t.me/{BOT_USERNAME}?startgroup=true",
                     )
                 ],
-                [InlineKeyboardButton("❓ Basic Guide", callback_data="cbhowtouse")],
+                [InlineKeyboardButton("Basic Guide", callback_data="cbhowtouse")],
                 [
-                    InlineKeyboardButton("📚 Commands", callback_data="cbcmds"),
-                    InlineKeyboardButton("💝 Donate", url=f"https://t.me/{OWNER_NAME}"),
+                    InlineKeyboardButton("Commands", callback_data="cbcmds"),
                 ],
                 [
                     InlineKeyboardButton(
-                        "👥 Official Group", url=f"https://t.me/{GROUP_SUPPORT}"
+                        "Official Group", url=f"https://t.me/{GROUP_SUPPORT}"
                     ),
                     InlineKeyboardButton(
-                        "📣 Official Channel", url=f"https://t.me/{UPDATES_CHANNEL}"
+                        "Official Channel", url=f"https://t.me/{UPDATES_CHANNEL}"
                     ),
                 ],
                 [
                     InlineKeyboardButton(
-                        "🌐 Source Code", url="https://github.com/levina-lab/VeezMusic"
+                        "Donate", url="https://t.me/xflskyzo"
                     )
                 ],
             ]
@@ -66,15 +65,15 @@ async def cbhelp(_, query: CallbackQuery):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("📚 Basic Cmd", callback_data="cbbasic"),
-                    InlineKeyboardButton("📕 Advanced Cmd", callback_data="cbadvanced"),
+                    InlineKeyboardButton("Basic Cmd", callback_data="cbbasic"),
+                    InlineKeyboardButton("Advanced Cmd", callback_data="cbadvanced"),
                 ],
                 [
-                    InlineKeyboardButton("📘 Admin Cmd", callback_data="cbadmin"),
-                    InlineKeyboardButton("📗 Sudo Cmd", callback_data="cbsudo"),
+                    InlineKeyboardButton("Admin Cmd", callback_data="cbadmin"),
+                    InlineKeyboardButton("Sudo Cmd", callback_data="cbsudo"),
                 ],
-                [InlineKeyboardButton("📙 Owner Cmd", callback_data="cbowner")],
-                [InlineKeyboardButton("🔙 Go Back", callback_data="cbguide")],
+                [InlineKeyboardButton("Owner Cmd", callback_data="cbowner")],
+                [InlineKeyboardButton("Go Back", callback_data="cbguide")],
             ]
         ),
     )
@@ -124,7 +123,7 @@ async def cbadvanced(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("cbadmin"))
 async def cbadmin(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""🏮 **here is the admin commands**
+        f"""🏮 **Here is the admin commands**
 
 /player - show the music playing status
 /pause - pause the music streaming
@@ -149,7 +148,7 @@ async def cbadmin(_, query: CallbackQuery):
 @Client.on_callback_query(filters.regex("cbsudo"))
 async def cbsudo(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""🏮 **here is the sudo commands**
+        f"""🏮 **Here is the sudo commands**
 
 /leaveall - order the assistant to leave from all group
 /stats - show the bot statistic
@@ -217,14 +216,14 @@ async def cbback(_, query: CallbackQuery):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("⏸ pause", callback_data="cbpause"),
-                    InlineKeyboardButton("▶️ resume", callback_data="cbresume"),
+                    InlineKeyboardButton("⏸ Pause", callback_data="cbpause"),
+                    InlineKeyboardButton("▶️ Resume", callback_data="cbresume"),
                 ],
                 [
-                    InlineKeyboardButton("⏩ skip", callback_data="cbskip"),
-                    InlineKeyboardButton("⏹ stop", callback_data="cbend"),
+                    InlineKeyboardButton("⏩ Skip", callback_data="cbskip"),
+                    InlineKeyboardButton("⏹ Stop", callback_data="cbend"),
                 ],
-                [InlineKeyboardButton("⛔ anti cmd", callback_data="cbdelcmds")],
+                [InlineKeyboardButton("⛔ Anti cmd", callback_data="cbdelcmds")],
                 [InlineKeyboardButton("🗑 Close", callback_data="close")],
             ]
         ),
@@ -236,16 +235,16 @@ async def cbback(_, query: CallbackQuery):
 @authorized_users_only
 async def cbdelcmds(_, query: CallbackQuery):
     await query.edit_message_text(
-        f"""📚 **this is the feature information:**
+        f"""📚 **This is the feature information:**
         
-**💡 Feature:** delete every commands sent by users to avoid spam in groups !
+**💡 Feature:** Delete every commands sent by users to avoid spam in groups !
 
 ❔ usage:**
 
- 1️⃣ to turn on feature:
+ 1️⃣ To turn on feature:
      » type `/delcmd on`
     
- 2️⃣ to turn off feature:
+ 2️⃣ To turn off feature:
      » type `/delcmd off`
       
 ⚡ __Powered by {BOT_NAME} A.I__""",
@@ -260,7 +259,7 @@ async def cbhelps(_, query: CallbackQuery):
     await query.edit_message_text(
         f"""✨ **Hello** [{query.message.chat.first_name}](tg://user?id={query.message.chat.id}) !
 
-» **press the button below to read the explanation and see the list of available commands !**
+» **Preess the button below to read the explanation and see the list of available commands !**
 
 ⚡ __Powered by {BOT_NAME} A.I__""",
         reply_markup=InlineKeyboardMarkup(
@@ -407,14 +406,16 @@ async def cmdhome(_, query: CallbackQuery):
     bttn = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("Command Syntax", callback_data="cmdsyntax")
+                InlineKeyboardButton("Command Eror", callback_data="cmdsyntax")
             ],[
-                InlineKeyboardButton("🗑 Close", callback_data="close")
+                InlineKeyboardButton("Channel Support", callback_data="cmdsyntax")
+            ],[
+                InlineKeyboardButton("🗑 Close", url=f"https://t.me/{UPDATES_CHANNEL}"
             ]
         ]
     )
     
-    nofound = "😕 **couldn't find song you requested**\n\n» **please provide the correct song name or include the artist's name as well**"
+    nofound = "😕 **Couldn't find song you requested**\n\n» **please provide the correct song name or include the artist's name as well**"
     
     await query.edit_message_text(nofound, reply_markup=bttn)
 
