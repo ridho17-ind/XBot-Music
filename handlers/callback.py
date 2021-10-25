@@ -406,9 +406,9 @@ async def cmdhome(_, query: CallbackQuery):
     bttn = InlineKeyboardMarkup(
         [
             [
-                InlineKeyboardButton("Command Eror", callback_data="cmdsyntax")
+                InlineKeyboardButton("Command Syntax", callback_data="cmdsyntax")
             ],[
-                InlineKeyboardButton("Channel Support", url=f"https://t.me/{UPDATES_CHANNEL})"
+                InlineKeyboardButton("🗑 Close", callback_data="close")
             ]
         ]
     )
