@@ -408,9 +408,7 @@ async def cmdhome(_, query: CallbackQuery):
             [
                 InlineKeyboardButton("Command Eror", callback_data="cmdsyntax")
             ],[
-                InlineKeyboardButton("Channel Support", callback_data="cmdsyntax")
-            ],[
-                InlineKeyboardButton("🗑 Close", url=f"https://t.me/{UPDATES_CHANNEL}"
+                InlineKeyboardButton("Channel Support", url=f"https://t.me/{UPDATES_CHANNEL}"
             ]
         ]
     )
