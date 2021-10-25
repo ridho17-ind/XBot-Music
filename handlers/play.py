@@ -134,7 +134,7 @@ async def playlist(client, message):
         temp.append(t)
     now_playing = temp[0][0]
     by = temp[0][1].mention(style="md")
-    msg = "💡 **now playing** on {}".format(message.chat.title)
+    msg = "💡 **Now playing** on {}".format(message.chat.title)
     msg += "\n\n• " + now_playing
     msg += "\n• Req By " + by
     temp.pop(0)
@@ -205,7 +205,7 @@ async def settings(client, message):
             await message.reply(stats, reply_markup=r_ply("play"))
     else:
         await message.reply(
-            "😕 **voice chat not found**\n\n» please turn on the voice chat first"
+            "😕 **Voice chat not found**\n\n» please turn on the voice chat first"
         )
 
 
@@ -803,9 +803,9 @@ async def lol_cb(b, cb):
         return
     useer_id = int(useer_id)
     if cb.from_user.id != useer_id:
-        await cb.answer("💡 Sorry this is not for you !", show_alert=True)
+        await cb.answer("🇬🇧 : sᴏʀʀʏ ᴛʜɪs sᴏɴɢ ɪs ɴᴏᴛ ꜰᴏʀ ʏᴏᴜ​\n\n🇮🇩 : ᴍᴀᴀꜰ ʟᴀɢᴜ ɪɴɪ ʙᴜᴋᴀɴ ᴜɴᴛᴜᴋ ᴀɴᴅᴀ​", show_alert=True)
         return
-    await cb.answer("💡 Downloading song you requested...", show_alert=True)
+    await cb.answer("🇬🇧 : ɪs ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ ʏᴏᴜʀ sᴏɴɢ ᴡᴀɪᴛ ᴀ ᴍᴏᴍᴇɴᴛ​\n\n🇮🇩 : sᴇᴅᴀɴɢ ᴍᴇɴɢᴜɴᴅᴜʜ ʟᴀɢᴜ ᴀɴᴅᴀ ᴛᴜɴɢɢᴜ sᴇʙᴇɴᴛᴀʀ​", show_alert=True)
     x = int(x)
     try:
         cb.message.reply_to_message.from_user.first_name
