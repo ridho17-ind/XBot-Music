@@ -42,7 +42,7 @@ async def botstats(_, message: Message):
     disk_usage = psutil.disk_usage("/").percent
     total_users = await db.total_users_count()
     await message.reply_text(
-        text=f"**📊 stats of @{BOT_USERNAME}** \n\n**🤖 bot version:** `{__version__}` \n\n**🙎🏼 total users:** \n » **on bot pm:** `{total_users}` \n\n**💾 disk usage:** \n » **disk space:** `{total}` \n » **used:** `{used}({disk_usage}%)` \n » **free:** `{free}` \n\n**🎛 hardware usage:** \n » **CPU usage:** `{cpu_usage}%` \n » **RAM usage:** `{ram_usage}%`",
+        text=f"**📊 Stats Of @{BOT_USERNAME}** \n\n**🤖 Bot version:** `{__version__}` \n\n**🙎🏼 Total users:** \n » **On Bot Pm:** `{total_users}` \n\n**💾 Disk Usage:** \n » **Disk Space:** `{total}` \n » **Used:** `{used}({disk_usage}%)` \n » **Free:** `{free}` \n\n**🎛 Hardware Usage:** \n » **CPU Usage:** `{cpu_usage}%` \n » **RAM Usage:** `{ram_usage}%`",
         parse_mode="Markdown",
         quote=True,
     )
@@ -75,12 +75,12 @@ async def ban(c: Client, m: Message):
         try:
             await c.send_message(
                 user_id,
-                f"😕 sorry, you're banned!** \n\nreason: `{ban_reason}` \nduration: `{ban_duration}` day(s). \n\n**💬 message from owner: ask in @{GROUP_SUPPORT} if you think this was an mistake.",
+                f"😕 Sorry, you're banned!** \n\nreason: `{ban_reason}` \nduration: `{ban_duration}` day(s). \n\n**💬 message from owner: ask in @{GROUP_SUPPORT} if you think this was an mistake.",
             )
-            ban_log_text += "\n\n✅ this notification was sent to that user"
+            ban_log_text += "\n\n✅ This notification was sent to that user"
         except:
             traceback.print_exc()
-            ban_log_text += f"\n\n❌ **failed sent this notification to that user** \n\n`{traceback.format_exc()}`"
+            ban_log_text += f"\n\n❌ **Failed sent this notification to that user** \n\n`{traceback.format_exc()}`"
         await db.ban_user(user_id, ban_duration, ban_reason)
         print(ban_log_text)
         await m.reply_text(ban_log_text, quote=True)
@@ -103,9 +103,9 @@ async def unban(c: Client, m: Message):
         return
     try:
         user_id = int(m.command[1])
-        unban_log_text = f"🆓 **unbanned user !** \n\n**user id:**{user_id}"
+        unban_log_text = f"🆓 **Unbanned user !** \n\n**user id:**{user_id}"
         try:
-            await c.send_message(user_id, "🎊 congratulations, you was unbanned!")
+            await c.send_message(user_id, "🎊 Congratulations, you was unbanned!")
             unban_log_text += "\n\n✅ this notification was sent to that user"
         except:
             traceback.print_exc()
@@ -204,7 +204,7 @@ async def updatebot(_, message: Message):
         try:
             remote.push(refspec="HEAD:refs/heads/main", force=True)
         except BaseException as error:
-            await msg.edit(f"🚫 **updater error** \n\nTraceBack : `{error}`")
+            await msg.edit(f"🚫 **Updater error** \n\nTraceBack : `{error}`")
             return repo.__del__()
 
 
