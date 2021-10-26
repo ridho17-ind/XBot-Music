@@ -48,7 +48,7 @@ async def update_admin(client, message):
         new_admins.append(u.user.id)
     admins[message.chat.id] = new_admins
     await message.reply_text(
-        "✅ Bot **reloaded correctly !**\n✅ **Admin list** has been **updated !**"
+        "✅ Bot **Reloaded Correctly !**\n✅ **Admin List** Has Been **Updated !**"
     )
 
 
@@ -62,14 +62,14 @@ async def controlset(_, message: Message):
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("⏸ pause", callback_data="cbpause"),
-                    InlineKeyboardButton("▶️ resume", callback_data="cbresume"),
+                    InlineKeyboardButton("⏸ Pause", callback_data="cbpause"),
+                    InlineKeyboardButton("▶️ Resume", callback_data="cbresume"),
                 ],
                 [
-                    InlineKeyboardButton("⏩ skip", callback_data="cbskip"),
-                    InlineKeyboardButton("⏹ stop", callback_data="cbend"),
+                    InlineKeyboardButton("⏩ Skip", callback_data="cbskip"),
+                    InlineKeyboardButton("⏹ Stop", callback_data="cbend"),
                 ],
-                [InlineKeyboardButton("⛔ anti cmd", callback_data="cbdelcmds")],
+                [InlineKeyboardButton("⛔ Anti Cmd", callback_data="cbdelcmds")],
                 [InlineKeyboardButton("🗑 Close", callback_data="close")],
             ]
         ),
@@ -84,7 +84,7 @@ async def pause(_, message: Message):
     if (chat_id not in callsmusic.pytgcalls.active_calls) or (
         callsmusic.pytgcalls.active_calls[chat_id] == "paused"
     ):
-        await message.reply_text("❌ **no music is currently playing**")
+        await message.reply_text("❌ **No music is currently playing**")
     else:
         callsmusic.pytgcalls.pause_stream(chat_id)
         await message.reply_text(
@@ -100,7 +100,7 @@ async def resume(_, message: Message):
     if (chat_id not in callsmusic.pytgcalls.active_calls) or (
         callsmusic.pytgcalls.active_calls[chat_id] == "playing"
     ):
-        await message.reply_text("❌ **no music is paused**")
+        await message.reply_text("❌ **No music is paused**")
     else:
         callsmusic.pytgcalls.resume_stream(chat_id)
         await message.reply_text(
@@ -114,7 +114,7 @@ async def resume(_, message: Message):
 async def stop(_, message: Message):
     chat_id = get_chat_id(message.chat)
     if chat_id not in callsmusic.pytgcalls.active_calls:
-        await message.reply_text("❌ **no music is currently playing**")
+        await message.reply_text("❌ **No music is currently playing**")
     else:
         try:
             queues.clear(chat_id)
@@ -122,7 +122,7 @@ async def stop(_, message: Message):
             pass
 
         callsmusic.pytgcalls.leave_group_call(chat_id)
-        await message.reply_text("✅ **music playback has ended**")
+        await message.reply_text("✅ **Music playback has ended**")
 
 
 @Client.on_message(command(["skip", f"skip@{BOT_USERNAME}", "next", f"next@{BOT_USERNAME}"]) & other_filters)
@@ -132,7 +132,7 @@ async def skip(_, message: Message):
     global que
     chat_id = get_chat_id(message.chat)
     if chat_id not in callsmusic.pytgcalls.active_calls:
-        await message.reply_text("❌ **no music is currently playing**")
+        await message.reply_text("❌ **No music is currently playing**")
     else:
         queues.task_done(chat_id)
 
@@ -154,16 +154,16 @@ async def skip(_, message: Message):
 async def authenticate(client, message):
     global admins
     if not message.reply_to_message:
-        return await message.reply("💡 reply to message to authorize user !")
+        return await message.reply("💡 Reply to message to authorize user !")
     if message.reply_to_message.from_user.id not in admins[message.chat.id]:
         new_admins = admins[message.chat.id]
         new_admins.append(message.reply_to_message.from_user.id)
         admins[message.chat.id] = new_admins
         await message.reply(
-            "🟢 user authorized.\n\nfrom now on, that's user can use the admin commands."
+            "🟢 User authorized.\n\nfrom now on, that's user can use the admin commands."
         )
     else:
-        await message.reply("✅ user already authorized!")
+        await message.reply("✅ User already authorized!")
 
 
 @Client.on_message(command(["unauth", f"deauth@{BOT_USERNAME}"]) & other_filters)
@@ -171,7 +171,7 @@ async def authenticate(client, message):
 async def deautenticate(client, message):
     global admins
     if not message.reply_to_message:
-        return await message.reply("💡 reply to message to deauthorize user !")
+        return await message.reply("💡 Reply to message to deauthorize user !")
     if message.reply_to_message.from_user.id in admins[message.chat.id]:
         new_admins = admins[message.chat.id]
         new_admins.remove(message.reply_to_message.from_user.id)
@@ -180,7 +180,7 @@ async def deautenticate(client, message):
             "🔴 user deauthorized.\n\nfrom now that's user can't use the admin commands."
         )
     else:
-        await message.reply("✅ user already deauthorized!")
+        await message.reply("✅ User already deauthorized!")
 
 
 # this is a anti cmd feature
@@ -196,12 +196,12 @@ async def delcmdc(_, message: Message):
     chat_id = message.chat.id
     if status == "on":
         if await delcmd_is_on(message.chat.id):
-            return await message.reply_text("✅ already activated")
+            return await message.reply_text("✅ Already activated")
         await delcmd_on(chat_id)
-        await message.reply_text("🟢 activated successfully")
+        await message.reply_text("🟢 Activated successfully")
     elif status == "off":
         await delcmd_off(chat_id)
-        await message.reply_text("🔴 disabled successfully")
+        await message.reply_text("🔴 Disabled successfully")
     else:
         await message.reply_text(
             "read the /help message to know how to use this command"
@@ -219,7 +219,7 @@ async def cbpause(_, query: CallbackQuery):
         callsmusic.pytgcalls.active_calls[query.message.chat.id] == "paused"
     ):
         await query.edit_message_text(
-            "❌ **no music is currently playing**", reply_markup=BACK_BUTTON
+            "❌ **No music is currently playing**", reply_markup=BACK_BUTTON
         )
     else:
         callsmusic.pytgcalls.pause_stream(query.message.chat.id)
