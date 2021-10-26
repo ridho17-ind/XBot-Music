@@ -45,7 +45,7 @@ async def cbstart(_, query: CallbackQuery):
                 ],
                 [
                     InlineKeyboardButton(
-                        "Donate", url="https://t.me/xflskyzo"
+                        "Donate", url="https://t.me/{OWNER_NAME}"
                     )
                 ],
             ]
