@@ -18,7 +18,7 @@ bot = Bot(
     plugins=dict(root="handlers"),
 )
 
-print(f"[INFO]: VEEZ MUSIC v{__version__} STARTED !")
+print(f"[INFO]: XBOT MUSIC v{__version__} STARTED !")
 
 bot.start()
 run()
