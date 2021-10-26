@@ -1,9 +1,9 @@
 {
     "name": "Veez Music Bot",
-    "logo": "https://telegra.ph/file/9dd9b20abcda2d7bb6725.png",
-    "description": "veez music allow you to stream music trought the telegram voice chat feature.",
+    "logo": "https://telegra.ph/file/0fca8a3dc1a1cb05ed8d8.jpg",
+    "description": "xbot music allow you to stream music trought the telegram voice chat feature.",
     "keywords": ["music", "voice chat", "telegram"],
-    "repository": "https://github.com/levina-lab/veezmusic",
+    "repository": "https://github.com/ridho17-ind/XBot-Music",
     "stack": "container",
     "env": {
         "SESSION_NAME": {
@@ -42,7 +42,7 @@
         "ASSISTANT_NAME": {
             "description": "fill with the assistant username without @",
             "required": true,
-            "value": "veezasisstant"
+            "value": ""
         },
         "BG_IMAGE": {
             "description": "fill with your costum background image link",
@@ -52,12 +52,12 @@
         "OWNER_NAME": {
             "description": "fill with your telegram username without @",
             "required": false,
-            "value": "dlwrml"
+            "value": "xflskyzo"
         },
         "ALIVE_NAME": {
             "description": "fill with the nickname of your telegram account",
             "required": false,
-            "value": "Levina"
+            "value": "Fariz"
         },
         "API_ID": {
             "description": "your Api ID from my.telegram.org/apps",
@@ -79,12 +79,12 @@
         "UPDATES_CHANNEL": {
             "description": "if you have channel, fill the channel username here without @",
             "required": false,
-            "value": "levinachannel"
+            "value": "Gen_Music_Project"
         },
         "GROUP_SUPPORT": {
             "description": "if you have group, fill the group username here without @",
             "required": false,
-            "value": "VeezSupportGroup"
+            "value": "FlicksSupport"
         }
     },
     "buildpacks": [
