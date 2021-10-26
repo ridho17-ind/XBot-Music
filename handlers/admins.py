@@ -48,7 +48,7 @@ async def update_admin(client, message):
         new_admins.append(u.user.id)
     admins[message.chat.id] = new_admins
     await message.reply_text(
-        "✅ Bot **Reloaded Correctly !**\n✅ **Admin List** Has Been **Updated !**"
+        "✅ Bot **Reloaded Correctly !**\n✅ **Admin List** Has Been **Updated !**\n✅ **And Join My Channel**"
     )
 
 
