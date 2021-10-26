@@ -85,6 +85,11 @@
             "description": "if you have group, fill the group username here without @",
             "required": false,
             "value": "FlicksSupport"
+        },
+        "THUMB_IMG": {
+            "description": "fill with your costum select song image link",
+            "required": false,
+            "value": "https://telegra.ph/file/41370c64d90b356e297dc.jpg"
         }
     },
     "buildpacks": [
