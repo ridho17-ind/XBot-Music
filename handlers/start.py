@@ -80,7 +80,7 @@ async def start_(client: Client, message: Message):
                 ],
                 [
                     InlineKeyboardButton(
-                        "Donate", url="https://t.me/XFLSkyzo"
+                        "Donate", url="https://t.me/{OWNER_NAME}"
                     )
                 ],
             ]
@@ -124,7 +124,7 @@ async def help(client: Client, message: Message):
     await message.reply_text(
         f"""✨ **Hello** {message.from_user.mention()} !
 
-» **press the button below to read the explanation and see the list of available commands !**
+» **Press the button below to read the explanation and see the list of available commands !**
 
 ⚡ __Powered by {BOT_NAME} A.I__""",
         reply_markup=InlineKeyboardMarkup(
