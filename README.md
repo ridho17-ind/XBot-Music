@@ -112,7 +112,7 @@ python3 main.py # run the bot.
 - [Skyzo](https://github.com/ridho17-ind): Dev
 - [Fariz](https://github.com/fjgaming212): Dev
 - [Alya](https://github.com/Alya4U): Dev
-- [Tonic](https://github.com/Tonic999): Dev
+- [Tonic](https://github.com/Tonic990): Dev
 - [Levina](https://github.com/levina-lab): Dev
 - [Tofik](https://github.com/tofikdn): Dev
 - [Zxce3](https://github.com/Zxce3): Dev
