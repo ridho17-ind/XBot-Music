@@ -89,7 +89,7 @@
 ## Heroku Deployment <img src="./etc/Kenpurple.gif" width="40px">
 The easy way to host this bot, deploy to Heroku, Change the app country to Europe (it will help to make the bot stable).
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/levina-lab/veezmusic)
+[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/ridho17-ind/XBot-Music)
 
 ## VPS Deployment 📡
 
@@ -109,6 +109,8 @@ python3 main.py # run the bot.
 ```
 
 ### Special Credits 💖
+- [Skyzo](https://github.com/ridho17-ind): Dev
+- [Fariz](https://github.com/fjgaming212): Dev
 - [Levina](https://github.com/levina-lab): Dev
 - [Tofik](https://github.com/tofikdn): Dev
 - [Zxce3](https://github.com/Zxce3): Dev
