@@ -90,6 +90,11 @@
             "description": "fill with your costum select song image link",
             "required": false,
             "value": "https://telegra.ph/file/41370c64d90b356e297dc.jpg"
+        },
+        "ALIVE_IMG": {
+            "description": "Alive/Start group photo for you bot",
+            "required": false,
+            "value": "https://telegra.ph/file/9e4d7a88bb7b473d60307.jpg"
         }
     },
     "buildpacks": [
