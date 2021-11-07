@@ -80,7 +80,7 @@ async def start_(client: Client, message: Message):
                 ],
                 [
                     InlineKeyboardButton(
-                        "Owner 👨‍💻", url="https://t.me/{OWNER_NAME}"
+                        "Owner 👨‍💻", url="https://t.me/devoloperflicks/32"
                     )
                 ],
             ]
